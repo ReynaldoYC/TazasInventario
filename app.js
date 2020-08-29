@@ -1,4 +1,4 @@
-const ws = new WebSocket('wss://reynaldoyc.github.io/TazasInventario/');
+const ws = new WebSocket('ws://stupefied-brown-bf83b2.netlify.app/');
 ws.onopen = () => {
     console.log('conectado');
 };
