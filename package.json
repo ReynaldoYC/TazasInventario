@@ -1,21 +1,25 @@
 {
-  "name": "InventarioTazas",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ReynaldoYC/TazasInventario.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ReynaldoYC/TazasInventario/issues"
-  },
-  "homepage": "https://github.com/ReynaldoYC/TazasInventario#readme"
+    "name": "InventarioTazas",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js"
+    },
+    "dependencies": {
+        "express": "^4.4.5",
+        "ws": "0.4.x"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ReynaldoYC/TazasInventario.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/ReynaldoYC/TazasInventario/issues"
+    },
+    "homepage": "https://github.com/ReynaldoYC/TazasInventario#readme"
 }
