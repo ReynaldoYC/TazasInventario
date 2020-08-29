@@ -1,24 +1,20 @@
-'use strict';
-
+const path = require('path');
 const express = require('express');
-const { Server } = require('ws');
+const app = express();
 
-const PORT = process.env.PORT || 3000;
-const INDEX = '/index.html';
+app.set('port', process.env.PORT || 3000);
 
-const server = express()
-    .use((req, res) => res.sendFile(INDEX, { root: __dirname }))
-    .listen(PORT, () => console.log(`Listening on ${PORT}`));
+app.use(express.static(path.join(__dirname, 'public')));
 
-const wss = new Server({ server });
+const server = app.listen(app.get('port'), () => {
+    console.log('server on port', app.get('port'));
+})
 
-wss.on('connection', (ws) => {
-    console.log('Client connected');
-    ws.on('close', () => console.log('Client disconnected'));
-});
 
-setInterval(() => {
-    wss.clients.forEach((client) => {
-        client.send(new Date().toTimeString());
-    });
-}, 1000);
+// web services
+const SocketIO = require('socket.io');
+const io = SocketIO(server);
+
+io.on('connection', (socket) => {
+    console.log('nueva conexion', socket.id);
+})
