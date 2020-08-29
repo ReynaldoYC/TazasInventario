@@ -37,22 +37,39 @@
 
                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                     <div class="card-body">
-                        <button class="btn btn-warning">-</button>
-                        <button class="btn btn-warning">+</button>
+                        <button class="btn btn-warning" id="restar">-</button>
+                        <button class="btn btn-warning" id="sumar">+</button>
                     </div>
                 </div>
             </div>
             <div class="card">
                 <div class="card-header" id="headingTwo">
                     <h2 class="mb-0">
-                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Taza con Asa y Borde
-                        </button>
+                        <div class="d-flex d-flex justify-content-around" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <p>Taza con Asa y Borde</p>
+                            <p>cant: <span>64</span></p>
+                        </div>
                     </h2>
                 </div>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                     <div class="card-body">
-
+                        Colores
+                        <div class="mt-2"> Rojo
+                            <button class="btn btn-warning">-</button>
+                            <button class="btn btn-warning">+</button>
+                        </div>
+                        <div class="mt-2"> azul
+                            <button class="btn btn-warning">-</button>
+                            <button class="btn btn-warning">+</button>
+                        </div>
+                        <div class="mt-2"> Verde
+                            <button class="btn btn-warning">-</button>
+                            <button class="btn btn-warning">+</button>
+                        </div>
+                        <div class="mt-2"> Celeste
+                            <button class="btn btn-warning">-</button>
+                            <button class="btn btn-warning">+</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -121,6 +138,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="app.js"></script>
     <script src="server.js"></script>
+    <script src="./public/prueba.js"></script>
 </body>
 
 </html>
