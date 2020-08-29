@@ -1,4 +1,4 @@
-const ws = new WebSocket('ws://http://127.0.0.1:5500/index.html');
+const ws = new WebSocket('ws://reynaldoyc.github.io/TazasInventario/');
 ws.onopen = () => {
     console.log('conectado');
 };
