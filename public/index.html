@@ -9,8 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
     <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+    <link rel="stylesheet" href="app.css">
 </head>
-<link rel="stylesheet" href="app.css">
 
 <body>
 
@@ -21,9 +21,9 @@
             <div class="card">
                 <div class="card-header" id="headingOne">
                     <h2 class="mb-0">
-                        <div class="d-flex d-flex justify-content-around" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <div class="btn btn-link btn-block m-0 p-0 text-left collapsed text-decoration-none d-flex justify-content-around align-items-end" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                             <p>Tazas Blancas</p>
-                            <p>cant: <span id="tb-general">0</span></p>
+                            <p>cant: <span id="tb-general" class="h4">0</span></p>
                         </div>
                     </h2>
                 </div>
@@ -33,37 +33,49 @@
                         <button class="btn btn-warning" id="restar">-</button>
                         <p class="ml-4 mr-4" id="tb">0</p>
                         <button class="btn btn-warning" id="sumar">+</button>
-                        <p id="blancaid"></p>
+                        <p id="blancaid" class="d-none invisible"></p>
                     </div>
                 </div>
             </div>
             <div class="card">
                 <div class="card-header" id="headingTwo">
                     <h2 class="mb-0">
-                        <div class="d-flex d-flex justify-content-around" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <div class=" btn btn-link btn-block text-left collapsed text-decoration-none d-flex justify-content-around" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                             <p>Taza con Asa y Borde</p>
-                            <p>cant: <span>64</span></p>
+                            <p class="">cant: <span id="tab-general" class="h4">0</span></p>
                         </div>
                     </h2>
                 </div>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                    <div class="card-body">
+                    <div class="card-body d-flex flex-column justify-content-center align-items-center">
                         Colores
-                        <div class="mt-2"> Rojo
+                        <div class="card-body d-flex justify-content-center align-items-baseline">
+                            <p class="mr-4">Rojo</p>
                             <button class="btn btn-warning">-</button>
+                            <p class="ml-4 mr-4" id="tabRojo">0</p>
                             <button class="btn btn-warning">+</button>
+                            <p id="blancaid" class="d-none invisible"></p>
                         </div>
-                        <div class="mt-2"> azul
+                        <div class="card-body d-flex justify-content-center align-items-baseline">
+                            <p class="mr-4">Azul</p>
                             <button class="btn btn-warning">-</button>
+                            <p class="ml-4 mr-4" id="tabRojo">0</p>
                             <button class="btn btn-warning">+</button>
+                            <p id="blancaid" class="d-none invisible"></p>
                         </div>
-                        <div class="mt-2"> Verde
+                        <div class="card-body d-flex justify-content-center align-items-baseline">
+                            <p class="mr-4">Verde</p>
                             <button class="btn btn-warning">-</button>
+                            <p class="ml-4 mr-4" id="tabRojo">0</p>
                             <button class="btn btn-warning">+</button>
+                            <p id="blancaid" class="d-none invisible"></p>
                         </div>
-                        <div class="mt-2"> Celeste
+                        <div class="card-body d-flex justify-content-center align-items-baseline">
+                            <p class="mr-4">Celeste</p>
                             <button class="btn btn-warning">-</button>
+                            <p class="ml-4 mr-4" id="tabRojo">0</p>
                             <button class="btn btn-warning">+</button>
+                            <p id="blancaid" class="d-none invisible"></p>
                         </div>
                     </div>
                 </div>
@@ -71,56 +83,121 @@
             <div class="card">
                 <div class="card-header" id="headingThree">
                     <h2 class="mb-0">
-                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Taza con Asa y Fondo
+                        <button class="btn btn-link btn-block text-left collapsed text-decoration-none d-flex justify-content-around" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <p>Taza con Asa y Fondo</p>
+                            <p class="">cant: <span id="taf-general" class="h4">0</span></p>
                         </button>
                     </h2>
                 </div>
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                    <div class="card-body">
-
+                    <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                        Colores
+                        <div class="card-body d-flex justify-content-center align-items-baseline">
+                            <p class="mr-4">Rojo</p>
+                            <button class="btn btn-warning">-</button>
+                            <p class="ml-4 mr-4" id="tabRojo">0</p>
+                            <button class="btn btn-warning">+</button>
+                            <p id="blancaid" class="d-none invisible"></p>
+                        </div>
+                        <div class="card-body d-flex justify-content-center align-items-baseline">
+                            <p class="mr-4">Azul</p>
+                            <button class="btn btn-warning">-</button>
+                            <p class="ml-4 mr-4" id="tabRojo">0</p>
+                            <button class="btn btn-warning">+</button>
+                            <p id="blancaid" class="d-none invisible"></p>
+                        </div>
+                        <div class="card-body d-flex justify-content-center align-items-baseline">
+                            <p class="mr-4">Verde</p>
+                            <button class="btn btn-warning">-</button>
+                            <p class="ml-4 mr-4" id="tabRojo">0</p>
+                            <button class="btn btn-warning">+</button>
+                            <p id="blancaid" class="d-none invisible"></p>
+                        </div>
+                        <div class="card-body d-flex justify-content-center align-items-baseline">
+                            <p class="mr-4">Celeste</p>
+                            <button class="btn btn-warning">-</button>
+                            <p class="ml-4 mr-4" id="tabRojo">0</p>
+                            <button class="btn btn-warning">+</button>
+                            <p id="blancaid" class="d-none invisible"></p>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="card">
-                <div class="card-header" id="headingThree">
+                <div class="card-header" id="headingFour">
                     <h2 class="mb-0">
-                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Taza con Ventana
+                        <button class="btn btn-link btn-block text-left collapsed text-decoration-none d-flex justify-content-around" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            <p>Taza con Ventana</p>
+                            <p class="">cant: <span id="tv-general" class="h4">0</span></p>
                         </button>
                     </h2>
                 </div>
-                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                    <div class="card-body">
-
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                    <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                        Colores
+                        <div class="card-body d-flex justify-content-center align-items-baseline">
+                            <p class="mr-4">Rojo</p>
+                            <button class="btn btn-warning">-</button>
+                            <p class="ml-4 mr-4" id="tabRojo">0</p>
+                            <button class="btn btn-warning">+</button>
+                            <p id="blancaid" class="d-none invisible"></p>
+                        </div>
+                        <div class="card-body d-flex justify-content-center align-items-baseline">
+                            <p class="mr-4">Negra</p>
+                            <button class="btn btn-warning">-</button>
+                            <p class="ml-4 mr-4" id="tabRojo">0</p>
+                            <button class="btn btn-warning">+</button>
+                            <p id="blancaid" class="d-none invisible"></p>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="card">
-                <div class="card-header" id="headingThree">
+                <div class="card-header" id="headingFive">
                     <h2 class="mb-0">
-                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Taza Metalizada
+                        <button class="btn btn-link btn-block text-left collapsed text-decoration-none d-flex justify-content-around" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            <p>Taza Metalizada</p>
+                            <p class="">cant: <span id="tm-general" class="h4">0</span></p>
                         </button>
                     </h2>
                 </div>
-                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                    <div class="card-body">
-
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                    <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                        Colores
+                        <div class="card-body d-flex justify-content-center align-items-baseline">
+                            <p class="mr-4">Rojo</p>
+                            <button class="btn btn-warning">-</button>
+                            <p class="ml-4 mr-4" id="tabRojo">0</p>
+                            <button class="btn btn-warning">+</button>
+                            <p id="blancaid" class="d-none invisible"></p>
+                        </div>
+                        <div class="card-body d-flex justify-content-center align-items-baseline">
+                            <p class="mr-4">Negra</p>
+                            <button class="btn btn-warning">-</button>
+                            <p class="ml-4 mr-4" id="tabRojo">0</p>
+                            <button class="btn btn-warning">+</button>
+                            <p id="blancaid" class="d-none invisible"></p>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="card">
-                <div class="card-header" id="headingThree">
+                <div class="card-header" id="headingSix">
                     <h2 class="mb-0">
-                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Taza Mágica
+                        <button class="btn btn-link btn-block text-left collapsed text-decoration-none d-flex justify-content-around" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                            <p>Taza Mágica</p>
+                            <p class="">cant: <span id="tm-general" class="h4">0</span></p>
                         </button>
                     </h2>
                 </div>
-                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                    <div class="card-body">
-
+                <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+                    <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                        <div class="card-body d-flex justify-content-center align-items-baseline">
+                            <button class="btn btn-warning">-</button>
+                            <p class="ml-4 mr-4" id="tabRojo">0</p>
+                            <button class="btn btn-warning">+</button>
+                            <p id="blancaid" class="d-none invisible"></p>
+                        </div>
                     </div>
                 </div>
             </div>
