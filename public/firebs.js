@@ -7,33 +7,31 @@ firebase.initializeApp({
 
 var db = firebase.firestore();
 
-// db.collection("users").add({
-//         first: "Ada",
-//         last: "Lovelace",
-//         born: 1815
-//     })
-//     .then(function(docRef) {
-//         console.log("Document written with ID: ", docRef.id);
-//     })
-//     .catch(function(error) {
-//         console.error("Error adding document: ", error);
-//     });
-
 db.collection("tazablanca").onSnapshot(function(querySnapshot) {
     querySnapshot.forEach(function(doc) {
-        console.log(doc.id);
         tb.innerHTML = doc.data().cantidad;
         tbgeneral.innerHTML = doc.data().cantidad;
         blancaid.innerHTML = doc.id;
     });
 });
+db.collection("tazamagica").onSnapshot(function(querySnapshot) {
+    querySnapshot.forEach(function(doc) {
+        tmag.innerHTML = doc.data().cantidad;
+        tmaggeneral.innerHTML = doc.data().cantidad;
+        magicaid.innerHTML = doc.id;
+    });
+});
 
 
-function actualizarbd(blancaid, nuevo) {
+function actualizarbd(id, nuevo) {
     nuevo = parseInt(nuevo);
-    id = blancaid.textContent;
-    var actualizar = db.collection("tazablanca").doc(id);
-    // Set the "capital" field of the city 'DC'
+    console.log(nuevo)
+    if (id == 'biYM7Ggc6QkadVQCHN7Z') {
+        var actualizar = db.collection("tazablanca").doc(id);
+    } else {
+        var actualizar = db.collection("tazamagica").doc(id);
+
+    }
     return actualizar.update({
             cantidad: nuevo
         })
