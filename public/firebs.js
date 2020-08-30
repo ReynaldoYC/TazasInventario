@@ -21,25 +21,50 @@ db.collection("tazamagica").onSnapshot(function(querySnapshot) {
         magicaid.innerHTML = doc.id;
     });
 });
+db.collection("tazametalizada").onSnapshot(function(querySnapshot) {
+    querySnapshot.forEach(function(doc) {
+        let dorada = doc.data().dorada;
+        let rosada = doc.data().rosada;
+        tmDorada.innerHTML = dorada;
+        tmRosada.innerHTML = rosada;
+        metalizadaid.innerHTML = doc.id;
+        SumaTotalMetalizada(dorada, rosada);
+    });
+});
+db.collection("tazaventana").onSnapshot(function(querySnapshot) {
+    querySnapshot.forEach(function(doc) {
+        let negro = doc.data().negro;
+        let rojo = doc.data().rojo;
+        tvNegro.innerHTML = negro;
+        tvRojo.innerHTML = rojo;
+        ventanaid.innerHTML = doc.id;
+        SumaTotalVentana(negro, rojo);
+    });
+});
 
-
-function actualizarbd(id, nuevo) {
+function actualizarbd(id, nuevo, key) {
+    let clave = key;
     nuevo = parseInt(nuevo);
-    console.log(nuevo)
+    console.log(id, clave, nuevo)
     if (id == 'biYM7Ggc6QkadVQCHN7Z') {
         var actualizar = db.collection("tazablanca").doc(id);
-    } else {
+    }
+    if (id == 'wnXwtX3nohAWIyNhRJPI') {
         var actualizar = db.collection("tazamagica").doc(id);
-
+    }
+    if (id == 'JLgiGIJ85UbrzQejmdQK') {
+        var actualizar = db.collection("tazametalizada").doc(id);
+    }
+    if (id == 'WI3id1fCym4kjeeoqGfJ') {
+        var actualizar = db.collection("tazaventana").doc(id);
     }
     return actualizar.update({
-            cantidad: nuevo
+            [clave]: nuevo
         })
         .then(function() {
-            console.log("Document successfully updated!");
+            console.log("Se actualizó correctamente!");
         })
         .catch(function(error) {
-            // The document probably doesn't exist.
-            console.error("Error updating document: ", error);
+            console.error("Error: ", error);
         })
 }

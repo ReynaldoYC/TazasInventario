@@ -19,7 +19,9 @@ io.on('connection', (socket) => {
     console.log('nueva conexion', socket.id);
 
     socket.on('actualizarresta', (data) => {
+        console.log('console', data);
         io.sockets.emit('actualizarresta', data);
+
     });
     socket.on('actualizarsuma', (data) => {
         io.sockets.emit('actualizarsuma', data);
