@@ -24,7 +24,7 @@ sumar.addEventListener('click', (e) => {
     actualizar = parseInt(actualizar);
     actualizar += 1;
     e.target.parentElement.childNodes[3].textContent = actualizar
-    actualizarbd();
+    actualizarbd(blancaid, actualizar);
     socket.emit('actualizarsuma', {
         contador: actualizar
     })
