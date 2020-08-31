@@ -16,10 +16,8 @@ const SocketIO = require('socket.io');
 const io = SocketIO(server);
 
 io.on('connection', (socket) => {
-    console.log('nueva conexion', socket.id);
 
     socket.on('actualizarresta', (data) => {
-        console.log('console', data);
         io.sockets.emit('actualizarresta', data);
 
     });

@@ -7,6 +7,9 @@ firebase.initializeApp({
 
 var db = firebase.firestore();
 
+
+
+
 db.collection("tazablanca").onSnapshot(function(querySnapshot) {
     querySnapshot.forEach(function(doc) {
         tb.innerHTML = doc.data().cantidad;
@@ -38,7 +41,36 @@ db.collection("tazaventana").onSnapshot(function(querySnapshot) {
         tvNegro.innerHTML = negro;
         tvRojo.innerHTML = rojo;
         ventanaid.innerHTML = doc.id;
+        ventanaid.value = doc.id;
         SumaTotalVentana(negro, rojo);
+    });
+});
+db.collection("tazafondoborde").onSnapshot(function(querySnapshot) {
+    querySnapshot.forEach(function(doc) {
+
+        let data = doc.data();
+        let contador = 0;
+        fondoid.innerHTML = doc.id;
+        for (const key in data) {
+            let abr = 'taf' + key;
+            contador += data[key];
+            abr.innerHTML = data[key];
+        }
+        tafgeneral.innerHTML = contador;
+    });
+});
+db.collection("tazaborde").onSnapshot(function(querySnapshot) {
+    querySnapshot.forEach(function(doc) {
+        console.log(doc.data())
+        let data = doc.data();
+        let contador = 0;
+        bordeid.innerHTML = doc.id;
+        for (const key in data) {
+            let abr = 'taf' + key;
+            contador += data[key];
+            abr.innerHTML = data[key];
+        }
+        tabgeneral.innerHTML = contador;
     });
 });
 
@@ -58,11 +90,17 @@ function actualizarbd(id, nuevo, key) {
     if (id == 'WI3id1fCym4kjeeoqGfJ') {
         var actualizar = db.collection("tazaventana").doc(id);
     }
+    if (id == 'PP5kNItxcyD3qawu4g01') {
+        var actualizar = db.collection("tazafondoborde").doc(id);
+    }
+    if (id == 'a39IWPu5Abhgtcof5nvb') {
+        var actualizar = db.collection("tazaborde").doc(id);
+    }
     return actualizar.update({
             [clave]: nuevo
         })
         .then(function() {
-            console.log("Se actualizó correctamente!");
+            console.log("Se actualizó la base de datos!");
         })
         .catch(function(error) {
             console.error("Error: ", error);
